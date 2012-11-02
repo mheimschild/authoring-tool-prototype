@@ -32,6 +32,12 @@ container(color)
 #toolbar
   container(#90ee90)
 
+#drag_container
+  margin 10px
+  border 1px dotted grey
+  min-height 200px
+  overflow auto
+
 draggable(width, height, bg_img)
   cursor move
   margin-bottom 10px
@@ -40,6 +46,9 @@ draggable(width, height, bg_img)
   height height
   background url(bg_img) no-repeat center
   background-color white
+
+.text
+  draggable(94px, 17px, 'img/text.png')
 
 .text_field
   draggable(85px, 30px, 'img/text_field.png')
