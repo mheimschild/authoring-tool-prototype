@@ -14,11 +14,13 @@
 </body>
 
 <template name="work">
-  <div id="drag_container"></div>
+  <div id="drag_container">
+    {{items}}
+  </div>
 </template>
 
 <template name="toolbar">
-  <div class="text" draggable="true"></div>
-  <div class="text_field" draggable="true"></div>
-  <div class="checkbox" draggable="true"></div>
+  <div id="text" class="text" draggable="true"></div>
+  <div id="text_field" class="text_field" draggable="true"></div>
+  <div id="checkfox" class="checkbox" draggable="true"></div>
 </template>
