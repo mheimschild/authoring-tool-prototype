@@ -14,6 +14,8 @@ if Meteor.isClient
       items = Session.get('items')
       items.push e.dataTransfer.getData('text/html')
       Session.set('items', items)
+    'click #clean': ->
+      Session.set('items', [])
 
   Template.toolbar.events
     'dragstart div[draggable="true"]': (e) ->
