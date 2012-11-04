@@ -12,7 +12,10 @@ if Meteor.isClient
       e.preventDefault()
     'drop #drag_container': (e) ->
       items = Session.get('items')
-      items.push e.dataTransfer.getData('text/html')
+      items.push e.dataTransfer.getData('text')
+      element = document.createElement 'span'
+      element.setAttribute 'class', 'active ' + e.dataTransfer.getData('text')
+      e.srcElement.appendChild element
       Session.set('items', items)
     'click #clean': ->
       Session.set('items', [])
@@ -20,7 +23,7 @@ if Meteor.isClient
   Template.toolbar.events
     'dragstart div[draggable="true"]': (e) ->
       e.dataTransfer.effectAllowed = 'move'
-      e.dataTransfer.setData('text/html', e.srcElement.id);
+      e.dataTransfer.setData('text', e.srcElement.id);
 
 if Meteor.isServer
   Meteor.startup ->
