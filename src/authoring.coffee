@@ -3,22 +3,19 @@ Unit = new Meteor.Collection("units")
 
 if Meteor.isClient
   Template.work.items = ->
-    if !Session.get('items')
-      Session.set('items', [])
     Session.get('items')
 
   Template.work.events
     'dragover #drag_container': (e) ->
       e.preventDefault()
     'drop #drag_container': (e) ->
-      items = Session.get('items')
-      items.push e.dataTransfer.getData('text')
       element = document.createElement 'span'
       element.setAttribute 'class', 'active ' + e.dataTransfer.getData('text')
       e.srcElement.appendChild element
-      Session.set('items', items)
+      Session.set('items', e.srcElement.innerHTML)
     'click #clean': ->
-      Session.set('items', [])
+      find('#drag_container').innerHTML = ''
+      Session.set('items', '')
 
   Template.toolbar.events
     'dragstart div[draggable="true"]': (e) ->
