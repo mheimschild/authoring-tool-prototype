@@ -2,6 +2,9 @@ Exercises = new Meteor.Collection("exercises")
 Unit = new Meteor.Collection("units")
 
 if Meteor.isClient
+  Meteor.startup ->
+    document.getElementById('drag_container').innerHTML = Session.get('items') if Session.get('items')
+
   Template.work.items = ->
     Session.get('items')
 
