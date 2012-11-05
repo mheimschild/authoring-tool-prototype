@@ -14,7 +14,7 @@ if Meteor.isClient
       e.srcElement.appendChild element
       Session.set('items', e.srcElement.innerHTML)
     'click #clean': ->
-      find('#drag_container').innerHTML = ''
+      document.getElementById('drag_container').innerHTML = ''
       Session.set('items', '')
 
   Template.toolbar.events
