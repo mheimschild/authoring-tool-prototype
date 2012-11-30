@@ -19,7 +19,7 @@ Template.work.events
       type: e.dataTransfer.getData('text')
     Session.set('items', items)
   'click #clean': ->
-    Session.set('items', undefined)
+    Session.set('items', [])
   'click .item': (e) ->
     Session.set 'edit', e.srcElement.dataset['type']
     Session.set 'item', e.srcElement.dataset['index']
