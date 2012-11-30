@@ -5,6 +5,7 @@
 <body>
   <div id="main">
     <div id="wrapper-work">
+
       <div id="work">{{> work}}</div>
     </div>
     <div id="wrapper-toolbar">
@@ -14,11 +15,16 @@
 </body>
 
 <template name="work">
-  <div id="work_buttons">
+  <div class="row">
     <button id="clean">Clean</button>
   </div>
-  <div id="drag_container"></div>
-  <div id="preview"></div>
+  <div class="row">
+    <div id="drag_container"></div>
+    <div id="drag_edit"></div>
+  </div>
+  <div class="row">
+    <div id="preview"></div>
+  </div>
 </template>
 
 <template name="toolbar">

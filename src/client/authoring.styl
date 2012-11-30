@@ -8,6 +8,12 @@ html, body
   width 100%
   height 100%
 
+.row
+  float left
+  position relative
+  width 100%
+  overflow auto
+
 wrapper(width, float)
   height 100%
   width width
@@ -29,22 +35,30 @@ container(color)
 #work
   container(#add8e6)
 
-#work_buttons
-  overflow auto
-  padding 0 10px
-
 #clean
   float right
 
 #toolbar
   container(#90ee90)
 
-#drag_container
+box(float, width, min-width)
   margin 10px
   padding 10px
-  border 1px dotted grey
+  //border 1px dotted grey
   min-height 200px
   overflow auto
+  float float
+  width width
+  min-width min-width
+  border-radius 10px
+  background-color #fff
+  box-shadow 5px 5px 3px #666
+
+#drag_container
+  box(left, 75%, 500px)
+
+#drag_edit
+  box(right, 15%, 200px)
 
 #preview
   margin 10px
@@ -74,10 +88,10 @@ draggable(width, height, bg_img)
   border 1px solid red
 
 .text
-  draggable(94px, 17px, 'img/text.png')
+  draggable(94px, 17px, '/img/text.png')
 
 .text_field
-  draggable(85px, 30px, 'img/text_field.png')
+  draggable(85px, 30px, '/img/text_field.png')
 
 .checkbox
-  draggable(166px, 92px, 'img/checkbox.png')
+  draggable(166px, 92px, '/img/checkbox.png')
