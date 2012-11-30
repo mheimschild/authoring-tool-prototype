@@ -1,0 +1,28 @@
+<template name="edit">
+	<div class="edit">
+	{{#if is_class 'text'}}
+		<div class="row ">
+			<label>Text</label>
+		</div>
+		<div class="row">
+			<textarea rows="10"></textarea>
+		</div>
+	{{/if}}
+	
+	{{#if is_class 'checkbox'}}
+		<input type="text">
+	{{/if}}
+
+	{{#if is_class 'text_field'}}
+		<div class="row line">
+			<label>Size</label><input type="text" size="2">
+		</div>
+		<div class="row line">
+			<label>Max length</label><input type="text" size="2">
+		</div>
+		<div class="row line">
+			<label>Placeholder</label><input type="text" size="10">
+		</div>
+	{{/if}}
+	</div>
+</template>
