@@ -20,6 +20,8 @@ Template.work.events
     Session.set('items', items)
   'click #clean': ->
     Session.set('items', [])
+    Session.set 'edit', undefined
+    Session.set 'item', undefined
   'click .item': (e) ->
     Session.set 'edit', e.srcElement.dataset['type']
     Session.set 'item', e.srcElement.dataset['index']
