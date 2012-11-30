@@ -5,7 +5,6 @@
 <body>
   <div id="main">
     <div id="wrapper-work">
-
       <div id="work">{{> work}}</div>
     </div>
     <div id="wrapper-toolbar">
@@ -19,8 +18,14 @@
     <button id="clean">Clean</button>
   </div>
   <div class="row">
-    <div id="drag_container"></div>
-    <div id="drag_edit"></div>
+    <div id="drag_container">
+      {{#each items}}
+      <div class="{{type}} item" data-index="{{index}}" data-type="{{type}}"></div>
+      {{/each}}
+    </div>
+    <div id="drag_edit">
+      {{> edit}}
+    </div>
   </div>
   <div class="row">
     <div id="preview"></div>

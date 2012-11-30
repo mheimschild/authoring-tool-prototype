@@ -44,7 +44,7 @@ container(color)
 box(float, width, min-width)
   margin 10px
   padding 10px
-  //border 1px dotted grey
+  border 1px solid grey
   min-height 200px
   overflow auto
   float float
@@ -75,6 +75,7 @@ draggable(width, height, bg_img)
   height height
   background url(bg_img) no-repeat center
   background-color white
+  border 1px solid #aaa
 
 .active
   display inline-block
@@ -95,3 +96,7 @@ draggable(width, height, bg_img)
 
 .checkbox
   draggable(166px, 92px, '/img/checkbox.png')
+
+.item
+  float left
+  margin 5px
