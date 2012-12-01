@@ -1,14 +1,32 @@
 .edit label
-	display inline-block
-	width 80px
-	font-weight bold
+  display block
+  clear both
+  float left
+  width 40%
+  font-weight bold
 
-.edit input[type="text"]
+.edit input
+  display block
+  float left
+  width 55%
+  background-color #eee
   border 1px solid transparent
-  outline 1px solid transparent
-  background transparent
+  border-bottom 1px dotted #ddd
+  border-radius 0
+  margin 0
 
-.line
-	border-bottom 1px dotted #000
-	margin-bottom 2px
-	padding-bottom 2px
+.edit input:nth-of-type(1)
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+
+.edit input:nth-last-of-type(1)
+  border-bottom-left-radius 5px
+  border-bottom-right-radius 5px
+  border-bottom none
+
+.edit textarea
+  width 95%
+  height 95%
+  background-color #eee
+  border 1px solid transparent
+  resize none
