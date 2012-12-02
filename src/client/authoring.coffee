@@ -21,10 +21,10 @@ Template.work.events
   'click #clean': ->
     Session.set('items', [])
     Session.set 'edit', undefined
-    Session.set 'item', undefined
+    Session.set 'index', undefined
   'click .item': (e) ->
     Session.set 'edit', e.srcElement.dataset['type']
-    Session.set 'item', e.srcElement.dataset['index']
+    Session.set 'index', e.srcElement.dataset['index']
   'mouseover .active': (e) ->
     append_controls e.srcElement
   'mouseout .active': (e) ->

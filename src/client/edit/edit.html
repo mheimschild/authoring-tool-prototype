@@ -5,7 +5,7 @@
 				<label>Text</label>
 			</div>
 			<div class="row">
-				<textarea rows="10" resizable="false"></textarea>
+				<textarea data-attr="text" class="input" rows="10" resizable="false">{{item.text}}</textarea>
 			</div>
 		{{/if}}
 
@@ -14,9 +14,9 @@
 		{{/if}}
 
 		{{#if is_class 'text_field'}}
-			<label>Size</label><input type="text" size="2">
-			<label>Max length</label><input type="text" size="2">
-			<label>Placeholder</label><input type="text" size="10">
+			<label>Size</label><input data-attr="size" class="input" value="{{item.size}}">
+			<label>Max length</label><input data-attr="maxlength" class="input" value="{{item.maxlength}}">
+			<label>Placeholder</label><input data-attr="placeholder" class="input" value="{{item.placeholder}}">
 		{{/if}}
 	</div>
 </template>

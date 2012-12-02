@@ -2,7 +2,7 @@
   <div id="preview">
     {{#each items}}
       {{#if isOf type 'text'}}
-        <div>demo text</div>
+        <div>{{text}}</div>
       {{/if}}
       {{#if isOf type 'checkbox'}}
         <div>
@@ -13,7 +13,7 @@
       {{/if}}
       {{#if isOf type 'text_field'}}
         <div>
-          <input type="text">
+          <input type="text" size="{{size}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}">
         </div>
       {{/if}}
     {{/each}}
