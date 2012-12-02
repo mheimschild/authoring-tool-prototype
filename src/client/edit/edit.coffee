@@ -10,10 +10,9 @@ Template.edit.helpers
     return Session.equals('edit', type)
   noChoices: (value) ->
     obj = get_edited_item()
-    value = value == "true"
     no_choices = false
     no_choices = true if !obj || !obj.choices || 0 == obj.choices.length
-    no_choices == value
+    no_choices == (value == "true")
 
 Template.edit.events
   'blur .edit .input': (e) ->
@@ -21,19 +20,24 @@ Template.edit.events
     obj = get_edited_item()
     obj[srcElement.dataset['attr']] = srcElement.value
     update_obj obj
-  'keypress .edit .cb_input': (e) ->
+  'keyup .edit .cb_input': (e) ->
     switch e.keyCode
-      when 13
-        index = parseInt(e.srcElement.dataset['index'])
-        $choices = $(".edit .cb_input")
-        obj = get_edited_item()
-        obj.choices = [] if !obj.choices
-        if $choices.length == (index + 1)
-          $choices.last().after('<label>Choice</label><input class="cb_input" data-index="' + $choices.length + '" type="text">')
-          obj.choices[index + 1] = { index: index + 1, text: "" }
-        obj.choices[index] = { index: index, text: e.srcElement.value }
-        update_obj obj
-        
+      when 13, 9
+        e.preventDefault()
+        handle_choice_event e, true
+  'blur .edit .cb_input': (e) ->
+    handle_choice_event e, false
+  'click .edit .cb_input': (e) ->
+    return if e.offsetX <= e.srcElement.clientWidth - 16
+    index = parseInt(e.srcElement.dataset['index'])
+    obj = get_edited_item()
+    return if !obj || !obj.choices || 0 == obj.choices.length
+    obj.choices.splice(index, 1)
+    choice.index = i for choice, i in obj.choices
+    update_obj obj
+  'mousemove .edit .cb_input': (e) ->
+    e.srcElement.style.cursor = 'pointer' if e.offsetX > e.srcElement.clientWidth - 16
+    e.srcElement.style.cursor = 'text' if e.offsetX <= e.srcElement.clientWidth - 16
 
 get_edited_item = ->
   return Session.get('items')[Session.get('index')]
@@ -43,3 +47,15 @@ update_obj = (obj) ->
   index = Session.get('index')
   items[index] = obj
   Session.set('items', items)
+
+handle_choice_event = (e, may_create_new) ->
+  index = parseInt(e.srcElement.dataset['index'])
+  obj = get_edited_item()
+  obj.choices = [] if !obj.choices
+  obj.choices[index] = { index: index, text: e.srcElement.value }
+  update_obj obj
+  $choices = $(".edit .cb_input")
+  if may_create_new && $choices.length == (index + 1)
+    $choices.last().after('<label>Choice</label><input class="cb_input" data-index="' + $choices.length + '" type="text">')
+    obj.choices[index + 1] = { index: index + 1, text: "" }
+    update_obj obj

@@ -1,21 +1,23 @@
 <template name="preview">
   <div id="preview">
     {{#each items}}
-      {{#if isOf type 'text'}}
-        <div>{{text}}</div>
-      {{/if}}
-      {{#if isOf type 'checkbox'}}
-        <div>
+      <div>
+
+        {{#if isOf type 'text'}}
+          {{text}}
+        {{/if}}
+
+        {{#if isOf type 'checkbox'}}
           {{#each choices}}
             <input type="checkbox"><label>{{text}}</label><br>
           {{/each}}
-        </div>
-      {{/if}}
-      {{#if isOf type 'text_field'}}
-        <div>
+        {{/if}}
+
+        {{#if isOf type 'text_field'}}
           <input type="text" size="{{size}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}">
-        </div>
-      {{/if}}
+        {{/if}}
+        
+      </div>
     {{/each}}
   </div>
 </template>
