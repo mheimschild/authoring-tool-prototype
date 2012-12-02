@@ -6,9 +6,9 @@
       {{/if}}
       {{#if isOf type 'checkbox'}}
         <div>
-          <input type="checkbox"><label>Option 1</label><br>
-          <input type="checkbox"><label>Option 2</label><br>
-          <input type="checkbox"><label>Option 3</label><br>
+          {{#each choices}}
+            <input type="checkbox"><label>{{text}}</label><br>
+          {{/each}}
         </div>
       {{/if}}
       {{#if isOf type 'text_field'}}

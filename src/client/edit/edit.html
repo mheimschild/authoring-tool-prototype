@@ -10,7 +10,14 @@
 		{{/if}}
 
 		{{#if is_class 'checkbox'}}
-			<label>Choice 1</label><input type="text">
+			{{#if noChoices false}}
+				{{#each item.choices}}
+					<label>Choice</label><input class="cb_input" data-index="{{index}}" type="text" value="{{text}}">
+				{{/each}}
+			{{/if}}
+			{{#if noChoices true}}
+				<label>Choice</label><input class="cb_input" data-index="0" type="text">
+			{{/if}}
 		{{/if}}
 
 		{{#if is_class 'text_field'}}
