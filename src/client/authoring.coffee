@@ -18,6 +18,8 @@ Template.work.events
       index: items.length
       type: e.dataTransfer.getData('text')
     Session.set('items', items)
+  'click #save': ->
+    alert JSON.stringify(Session.get('items'))
   'click #clean': ->
     Session.set('items', [])
     Session.set 'edit', undefined
