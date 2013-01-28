@@ -1,0 +1,119 @@
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Welcome to Foundation</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+</head>
+<body>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h2>Authoren-SW</h2>
+      <p>Erstellen Sie Ihre Aufgaben jetzt !</p>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="eight columns">
+      <div class="row">
+        <div class="twelve columns">
+          <p>
+            <a href="#" class="small button">Save</a>
+            <a href="#" class="small button">Clean</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <div id="workarea" class="dotted"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns"></div>
+      </div>
+    </div>
+    <div class="four columns">
+      <h4>Bauelemente</h4>
+      <ul class="no-bullet">
+        <li class="text" draggable="true"></li>
+        <li class="text_field" draggable="true"></li>
+        <li class="checkbox" draggable="true"></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <p><a href="#" class="button">Share it!</a></p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="twelve columns">
+      <h3>Reveal</h3>
+      <p><a href="#" data-reveal-id="exampleModal" class="button">Example modal</a></p>
+    </div>
+  </div>
+  
+  <div id="exampleModal" class="reveal-modal">
+    <h2>This is a modal.</h2>
+    <p>
+      Reveal makes these very easy to summon and dismiss. The close button is simple an anchor with a unicode 
+      character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will 
+      also dismiss it.
+    </p>
+    <a class="close-reveal-modal">×</a>
+  </div>
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  <script src="javascripts/jquery.event.move.js"></script>
+  <script src="javascripts/jquery.event.swipe.js"></script>
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  <script src="javascripts/jquery.placeholder.js"></script>
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  <script src="javascripts/jquery.foundation.joyride.js"></script>
+  <script src="javascripts/jquery.foundation.clearing.js"></script>
+  <script src="javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+
+  
+    <script>
+    $(window).load(function(){
+      $("#featured").orbit();
+    });
+    </script> 
+  
+</body>
