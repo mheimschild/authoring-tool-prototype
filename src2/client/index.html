@@ -17,6 +17,7 @@
 
   <script src="javascripts/modernizr.foundation.js"></script>
   <script src="javascripts/jquery-ui-1.10.0.custom.min.js"></script>
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
 </head>
 <body>
 
@@ -32,10 +33,7 @@
     <div class="eight columns">
       <div class="row">
         <div class="twelve columns">
-          <p>
-            <a href="#" class="small button">Save</a>
-            <a href="#" class="small button">Clean</a>
-          </p>
+          {{> buttons}}
         </div>
       </div>
       <div class="row">
@@ -52,28 +50,14 @@
     <div class="four columns">
       <h4>Bauelemente</h4>
       <ul class="no-bullet" id="elements">
-        <li class="text"></li>
-        <li class="text_field"></li>
-        <li class="checkbox"></li>
+        <li class="text" data-type="text"></li>
+        <li class="text_field" data-type="text_field"></li>
+        <li class="checkbox" data-type="checkbox"></li>
       </ul>
     </div>
   </div>
 
-  <div class="row">
-    <div class="twelve columns">
-      <p><a href="#" data-reveal-id="shareDialog" class="button">Share it!</a></p>
-    </div>
-  </div>
-  
-  <div id="shareDialog" class="reveal-modal">
-    <h2>Share your tasks</h2>
-    <p>
-      Please copy and paste this URL <code>close-reveal-modal</code>.
-    </p>
-    <a class="close-reveal-modal">×</a>
-  </div>
-  
-  
+
   <!-- Included JS Files (Uncompressed) -->
   <!--
   <script src="javascripts/jquery.js"></script>
